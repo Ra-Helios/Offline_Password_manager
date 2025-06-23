@@ -39,7 +39,8 @@ class FirstLoginWindow:
         flag = auth.FirstLogin(password)
         if flag:
             messagebox.showinfo("Set-Up Successful","Password Saved Successfully!")
-            self.window.destroy() # Close the authentication window
+            self.window.quit() 
+            self.window.destroy()# Close the authentication window
             AppLoginWindow().run()
         else:
             messagebox.showerror("Error","Password Doesn't meet Criteria")
@@ -78,7 +79,8 @@ class AppLoginWindow:
     
         if flag:
             messagebox.showinfo("Login Successful!","Login Successful, Proceeding to Home...")
-            self.window.destroy()  # Close the authentication window
+            self.window.quit() 
+            self.window.destroy() # Close the authentication window
             MainAppWindow().run()  # Open the main app window
         else:
             self.attempts += 1  # Increment failed attempts
@@ -89,6 +91,7 @@ class AppLoginWindow:
             else:
                 # Show final error message and close or disable further attempts
                 messagebox.showerror("Error","Too many failed attempts. Access denied! Try Again Later.")
+                self.window.quit()
                 self.window.destroy()  # Close the window after max attempts
     
     def run(self):
@@ -270,13 +273,13 @@ class MainAppWindow:
             password_list = main.list_passwords()
             if website in password_list:
                 data = password_list[website]
-                copy_uid_btn = ctk.CTkButton(self.result_frame, text="copy UID", command=lambda u=data["uid"]:self.copy_to_clipboard(u, "UID"))
+                copy_uid_btn = ctk.CTkButton(self.content_frame, text="Copy UID", command=lambda u=data["username"]:self.copy_to_clipboard(u, "UID"))
                 copy_uid_btn.pack(pady=5)
-                copy_password_btn = ctk.CTkButton(self.result_frame, text="Copy Password", command=lambda p=data['password']: self.copy_to_clipboard(p, "Password"))
+                copy_password_btn = ctk.CTkButton(self.content_frame, text="Copy Password", command=lambda p=data['password']: self.copy_to_clipboard(p, "Password"))
                 copy_password_btn.pack(pady=5)
-                
-                clipboard_label = ctk.CTkLabel(self.result_frame, text="Password copied to clipboard.")
+                clipboard_label = ctk.CTkLabel(self.content_frame, text="Password copied to clipboard.")
                 clipboard_label.pack(pady=5)
+
     
     def copy_to_clipboard(self, text, item_type):
         # Copy the provided text to clipboard and show confirmation.
