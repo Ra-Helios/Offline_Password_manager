@@ -39,7 +39,7 @@ def save_passwords(passwords):
                 "passwd": cry.encrypt(entry["password"]) if entry["password"] and entry["password"] != "Not set (generate later)" else entry["password"]
             }
         with open(PassList, 'w') as file:
-            json.dump(encrypted_data, file, indent=4)
+            json.dump(encrypted_data, file, indent=4, sort_keys=True)
         return True
     except Exception as e:
         print(f"Error saving password data: {str(e)}")
