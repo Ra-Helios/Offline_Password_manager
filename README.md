@@ -12,9 +12,9 @@
 
 # Index
 
->- Setup for [**_WindowsOS_**](#setup-for-windowsos)
->- Setup for [**_LinuxOS_**](#setup-for-linuxos)
->- Setup for [**_MacOS_**](#setup-for-macos)
+>- Setup for [**_WindowsOS_**](#-setup-for-windowsos)
+>- Setup for [**_LinuxOS_**](#-setup-for-linuxos)
+>- Setup for [**_MacOS_**](#-setup-for-macos)
 
 Follow the steps below after downloading and extracting the **_.zip_**
 
@@ -22,7 +22,7 @@ Follow the steps below after downloading and extracting the **_.zip_**
 ---
 
 
-## Setup for WindowsOS
+## 🔵 Setup for WindowsOS
 
 #### 1. Install the Dependencies:
 
@@ -77,7 +77,7 @@ OR,
      
 ---
 
-## Setup for LinuxOS
+## 🟢 Setup for LinuxOS
 
 #### 1. Install the Dependencies:
 
@@ -139,7 +139,7 @@ You can run the program as required by using the same commands as above after `A
 
 ---
 
-## Setup for MacOS
+## 🍎 Setup for MacOS
 
 #### 1. Install the Dependencies:
 
